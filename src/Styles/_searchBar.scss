@@ -1,0 +1,71 @@
+.searchBarContainer {
+    background-image: linear-gradient(to right, rgba(3,37,65, 0.8) 0%, rgba(3,37,65, 0) 100%), url('bbbg.png');
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    height: 55vh;
+    width: 83vw;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    h2{
+        margin-top: 3rem;
+        font-size: 3rem;
+        font-weight: bold;
+        color: white;
+        position: relative;
+    }
+}
+
+
+.sbTextContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 85vw;
+    margin-top: 6rem;
+    margin-left: 30rem;
+}
+
+.sbText{
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    color: rgb(255, 255, 255);
+    font-size:2rem;
+    font-weight: bold;
+}
+.bg-img {
+    opacity: 0.8;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+
+.searchbar {
+    border: none;
+    position: relative;
+    height: 2.5rem;
+    width: 50vw;
+    border-radius: 3rem;
+}
+
+
+textarea:focus,
+input:focus,
+select:focus,
+textarea,
+input,
+select {
+    outline: none;
+    color: rgb(125, 130, 136);
+}
+
+input {
+    padding-left: 1rem;
+    
+}
