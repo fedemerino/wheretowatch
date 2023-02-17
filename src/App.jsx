@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './main.scss'
 import Navbar from './Components/Navbar';
@@ -12,7 +11,6 @@ function App() {
       <Navbar />
       <Body />
       <Footer />
-      <ToastContainer/>
     </>
   )
 }
