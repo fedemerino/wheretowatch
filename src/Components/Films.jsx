@@ -1,9 +1,10 @@
 import React from 'react'
 import Film from './Film'
-const Films = ({ props }) => {
+const Films = ({ films }) => {
     return (
-         props.map((prop) => {
-            return <Film key={prop.id} {...prop}/>
+        films.map((film) => {
+            if (film.backdrop_path) return <Film key={film.id} {...film}/>
+
         }) 
     )
 }

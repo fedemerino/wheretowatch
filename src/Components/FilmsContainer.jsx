@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { TailSpin } from 'react-loader-spinner'
 import Films from './Films'
 const FilmsContainer = () => {
-
+  const API_KEY  = '6bec42d565f4c875938c5bd604aed203';
   const [upcoming, setUpcoming] = useState([])
   const [popular, setPopular] = useState([])
 
@@ -13,13 +13,13 @@ const FilmsContainer = () => {
   }, [])
 
   async function fetchUpcoming() {
-    const resp = await fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=6bec42d565f4c875938c5bd604aed203&page=1')
+    const resp = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&page=1`)
     const data = await resp.json()
     setUpcoming(data)
   }
 
   async function fetchPopular() {
-    const resp = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=6bec42d565f4c875938c5bd604aed203&page=1')
+    const resp = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=1`)
     const data = await resp.json()
     setPopular(data)
   }
@@ -43,14 +43,14 @@ const FilmsContainer = () => {
       <div className='mb-5'>
         <p className='mb-4 fw-bolder filmDivisionTitle'>#Upcoming titles</p>
         <div className='filmsContainer'>
-          <Films props={upcoming.results} />
+          <Films films={upcoming.results} />
         </div>
       </div>
 
       <div className='mt-2'>
         <p className='mb-4 fw-bolder filmDivisionTitle'>#What's popular</p>
         <div className='filmsContainer'>
-          <Films props={popular.results} />
+          <Films films={popular.results} />
         </div>
       </div>
 
