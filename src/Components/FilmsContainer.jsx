@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { TailSpin } from 'react-loader-spinner'
 import Films from './Films'
 const FilmsContainer = () => {
-  const API_KEY  = '6bec42d565f4c875938c5bd604aed203';
+  const API_KEY = '6bec42d565f4c875938c5bd604aed203';
   const [upcoming, setUpcoming] = useState([])
   const [popular, setPopular] = useState([])
 
@@ -13,15 +13,21 @@ const FilmsContainer = () => {
   }, [])
 
   async function fetchUpcoming() {
-    const resp = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&page=1`)
-    const data = await resp.json()
-    setUpcoming(data)
+    try {
+      const resp = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&page=1`)
+      const data = await resp.json()
+      setUpcoming(data)
+    }
+    catch (err) { console.log(err) }
   }
 
   async function fetchPopular() {
-    const resp = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=1`)
-    const data = await resp.json()
-    setPopular(data)
+    try {
+      const resp = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=1`)
+      const data = await resp.json()
+      setPopular(data)
+    }
+    catch (err) { console.log(err) }
   }
 
   if (upcoming.length === 0 || popular.length === 0) {

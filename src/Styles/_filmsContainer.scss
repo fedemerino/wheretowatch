@@ -8,16 +8,19 @@
 
     }
 
-    .filmsContainer::-webkit-scrollbar {
+    .filmsContainer::-webkit-scrollbar,
+    .filmCastContainer::-webkit-scrollbar {
         height: 0.6rem;
     }
 
-    .filmsContainer::-webkit-scrollbar-track {
+    .filmsContainer::-webkit-scrollbar-track,
+    .filmCastContainer::-webkit-scrollbar-track {
         background-color: alpha($color: #00000000);
     }
 
-    .filmsContainer::-webkit-scrollbar-thumb {
-        background-color: #032541;
+    .filmsContainer::-webkit-scrollbar-thumb,
+    .filmCastContainer::-webkit-scrollbar-thumb {
+        background-color: rgb(9, 26, 44);
         border-radius: 10px;
     }
 
@@ -56,9 +59,9 @@
         letter-spacing: 0.7px;
     }
 
-    .filmsResultContainer{
+    .filmsResultContainer {
         width: 85%;
         display: grid;
         gap: 2rem;
-        grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     }

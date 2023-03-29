@@ -1,11 +1,27 @@
-
-.navbar{
+.navbar {
     font-size: 1.3rem;
-    background-color: #032541 !important;
+    background: linear-gradient(90deg, rgb(9, 26, 44) 0%, rgba(5, 22, 46, 0.924) 50%, rgb(9, 26, 44) 100%);
     position: relative;
     display: flex;
     height: 4rem;
     width: 100%;
     padding: 0;
     align-content: flex-end;
+
+    img{
+        height: 24px;
+    }
+
+    ul {
+        display: flex;
+    }
+}
+
+.navTitle {
+    font-family: 'Roboto', sans-serif;
+    background: -webkit-linear-gradient(#2c584a, #851414);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: white;
+    font-weight: 500;
 }

@@ -2,6 +2,10 @@
   background-size: 100vw 80vh !important;
 }
 
+.filmDetailMain {
+  min-height: 90vh;
+}
+
 .filmContainer {
   position: relative;
   width: 100%;
@@ -10,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(19, 6, 6, 0.719);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -34,6 +38,7 @@
 .filmTitle {
   display: flex;
   margin-top: 4rem;
+
   h2 {
     font-size: 2rem;
     font-weight: 700;
@@ -57,6 +62,7 @@
 }
 
 .genres {
+
   &::before,
   .duration::before {
     line-height: 0px;
@@ -73,18 +79,67 @@
 
 .overviewTitle {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
 }
+
 .overview {
+  margin-top: .5rem;
   width: 1000px;
   color: white;
 }
+
+.tagline {
+  margin-bottom: 1rem;
+}
+
+.taglineText {
+  font-style: italic;
+  font-size: 17px;
+  color: rgb(170, 170, 170);
+}
+
+.trailerContainer {
+  display: flex;
+  margin: 1.5rem 0 1.5rem 0;
+  gap: 2rem;
+}
+
+.trailer {
+  display: flex;
+  width: fit-content;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3.5rem;
+
+  svg {
+    fill: white;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  span {
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+  }
+}
+
 .circleContainer {
   width: 70px;
   height: 70px;
   position: relative;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+
+  span {
+    color: white;
+    font-weight: 600;
+  }
 }
+
 .outer {
   width: 70px;
   height: 70px;
@@ -94,21 +149,158 @@
   justify-content: center;
   align-items: center;
 }
+
 .percentage {
   position: absolute;
-  span{
+
+  span {
     font-size: 1.3rem;
     color: white;
     font-weight: 600;
   }
-  .percentSimbol{
+
+  .percentSimbol {
     font-size: .9rem;
   }
 }
 
 circle {
   fill: none;
-  stroke: rgb(33, 208, 122);
+  
   stroke-width: 5px;
-  stroke-dasharray: 190;
+  transform: rotate(270deg);
+  transform-origin: 50%;
+}
+
+.modal-dialog {
+  display: grid;
+}
+
+.modal-content {
+  right: 25%;
+  width: 75vw;
+  height: 90vh;
+  background-color: black;
+}
+
+iframe {
+  border-radius: 3%;
+}
+
+.modal-title {
+  font-size: 1rem;
+  color: white;
+}
+
+.modal-header {
+  background-color: rgb(9, 26, 44);
+
+  button {
+    color: white;
+  }
+
+  border: null;
+}
+
+.trailerNotAvailable {
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.trailerModal {
+  width: 100%;
+  height: 100%;
+}
+
+.cast {
+  margin: 2.5rem 0 1.5rem 5rem;
+  h3{
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+}
+
+.filmCastContainer {
+
+  gap: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  width: 60vw;
+  height: 280px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.castCard {
+  display: flex;
+  flex-direction: column;
+  height: 240px;
+  width: 140px;
+  border-radius: 8px;
+  border-collapse: separate;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.castCardTop {
+  img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  height: 170px;
+}
+
+.castCardBottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.castCardBottomCharacter {
+  margin: 0 0 0 6px;
+  font-size: 13px;
+  max-width: 130px;
+}
+
+.castCardBottomName {
+  margin: 0 0 0 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #000;
+  padding-top: 6px;
+}
+
+.bottomInfo{
+  min-width: 100vw;
+}
+
+.justWatch{
+  width: 100%;
+  margin-top: 2.5rem;
+  img{
+    width: 230px;
+  }
+}
+
+.select{
+  margin-top: 1rem;
+  width: 300px;
+}
+
+.providers{
+  width: 50%;
+  display: grid;
+  grid-auto-rows: 110px;
+  grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
+  img{
+    border-radius: 8px;
+    height: 64px;
+    width: 64px;
+  }
+}
+.providerName{
+  font-size: 14px;
+  font-weight: 500;
+  height: 10px;
+  text-align: center;
 }

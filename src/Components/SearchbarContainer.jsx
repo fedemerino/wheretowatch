@@ -12,7 +12,7 @@ const SearchbarContainer = () => {
     <div className='searchBarContainer'>
       <div className='sbTextContainer'>
         <h2>Welcome.</h2>
-        <h3 className='sbText'>Find out where to watch your favorite movies and TV shows!</h3>
+        <h3 className='sbText'>Find out where to watch your favorite movies!</h3>
       </div>
       <div className='sbContainer'>
         <form onSubmit={handleSubmit}>
