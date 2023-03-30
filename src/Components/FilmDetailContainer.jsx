@@ -52,10 +52,10 @@ const FilmDetailContainer = () => {
         const movieBG = movie.images;
         let titleDate = release_date.substr(0, 4);
         let releaseDate = release_date.replace(/-/g, "/");
-        let duration = `${Math.trunc(runtime / 60)}h ${runtime % 60} m`;
-        let randomBackgroundPath =
+        let duration = runtime ? `${Math.trunc(runtime / 60)}h ${runtime % 60} m` : null;
+        let randomBackgroundPath = movieBG.backdrops.length > 1 ?
             movieBG.backdrops[Math.floor(Math.random() * movieBG.backdrops.length)]
-                .file_path;
+                .file_path : null;
         let filmGenres = genres.map((genre) => genre.name).join(", ");
         let trailer = movie.videos.results.find((video) => video.name.toLowerCase().includes('trailer'))
         let videoPath
@@ -98,56 +98,87 @@ const FilmDetailContainer = () => {
                         </Modal>
                     </>
                     <div className="filmContainer">
-                        <div className="filmImage">
-                            <img
-                                className="img"
-                                src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2${poster_path}`}
-                                alt=""
-                            />
-                        </div>
-                        <div className="filmData">
-                            <div className="filmTitle">
-                                <h2>{original_title}</h2>
-                                <span>&nbsp;({titleDate})</span>
+                        <div className="imageDataContainer">
+                            <div className="filmImage">
+                                {poster_path
+                                    ? <img
+                                        className="img"
+                                        src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2${poster_path}`}
+                                        alt=""
+                                    />
+                                    : <img src='/notfound.png' className="notFound" />
+                                }
                             </div>
-                            <div className="filmInfo">
-                                <span className="releaseDate">{releaseDate}</span>
-                                <span className="genres">{filmGenres}</span>
-                                <span className="genres">{duration}</span>
-                            </div>
-
-                            <div className="trailerContainer">
-                                <div class="circleContainer">
-                                    <div className="outer">
-                                        <div className="percentage">
-                                            <span>{Math.ceil(vote_average * 10)}<span className="percentSimbol">%</span></span>
-                                        </div>
-                                        <svg>
-                                            <circle cx="50%" cy="50%" r="30" stroke-linecap="round" style={{
-                                                strokeDasharray: Math.ceil(vote_average * 190 / 10),
-                                                stroke: (Math.ceil(vote_average * 10) > 70) ? 'rgb(33, 208, 122)' : (Math.ceil(vote_average * 10) > 40) ? 'rgb(213,210,41)' : 'rgb(219, 35, 96)'
-                                            }} />
-                                        </svg>
+                            <div className="filmData">
+                                <div className="filmTitleContainer">
+                                    <div className="filmTitle">
+                                        <h2>{original_title}</h2>
+                                        <span>&nbsp;({titleDate})</span>
                                     </div>
-                                    <span>User Score</span>
+                                    <div className="filmInfoPhone">
+                                        <span className="releaseDate">{releaseDate}</span>
+                                        <span className="genres">{filmGenres}</span>
+                                        <span className="genres">{duration}</span>
+                                    </div>
                                 </div>
-                                <div className="trailer">
-                                    <span onClick={handleShow}><BsFillPlayFill /> Play Trailer</span>
-                                </div>
-                            </div>
-                            {tagline ? <div className="tagline">
-                                <span className="taglineText">{tagline}</span>
-                            </div> : null}
+                                <div className="imgInfoRowPhone">
+                                    <div className="imgPhone">
+                                        <div className="filmImagePhone">
+                                            {poster_path
+                                                ? <img
+                                                    className="img"
+                                                    src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2${poster_path}`}
+                                                    alt=""
+                                                />
+                                                : <img src='/notfound.png' className="notFound" />
+                                            }
+                                        </div>
+                                    </div>
+                                    <div className='infoTrailerTaglinePhone'>
+                                        <div className="filmInfo">
+                                            <span className="releaseDate">{releaseDate}</span>
+                                            <span className="genres">{filmGenres}</span>
+                                            <span className="genres">{duration}</span>
+                                        </div>
 
-                            <div className="filmOverview">
-                                <span className="overviewTitle">Overview</span>
-                                <p className="overview">{overview}</p>
+                                        <div className="trailerContainer">
+                                            <div class="circleContainer">
+                                                <div className="outer">
+                                                    <div className="percentage">
+                                                        <span>{vote_average ? Math.ceil(vote_average * 10) : 'NR'}<span className="percentSimbol">{vote_average ? '%' : null}</span></span>
+                                                    </div>
+                                                    <svg>
+                                                        <circle cx="50%" cy="50%" r="30" stroke-linecap="round" style={vote_average ? {
+                                                            strokeDasharray: Math.ceil(vote_average * 190 / 10),
+                                                            stroke: (Math.ceil(vote_average * 10) > 70) ? 'rgb(33, 208, 122)' : (Math.ceil(vote_average * 10) > 40) ? 'rgb(213,210,41)' : 'rgb(219, 35, 96)'
+                                                        } : null} />
+                                                    </svg>
+                                                </div>
+                                                <span>User Score</span>
+                                            </div>
+                                            <div className="trailer">
+                                                <span onClick={handleShow}><BsFillPlayFill /> Play Trailer</span>
+                                            </div>
+                                        </div>
+                                        {tagline ? <div className="tagline">
+                                            <span className="taglineText">{tagline}</span>
+                                        </div> : null}
+                                    </div>
+                                </div>
+                                <div className="filmOverview">
+                                    <div className="taglinePhone">
+                                        <span className="taglineText">{tagline}</span>
+                                    </div>
+                                    <span className="overviewTitle">Overview</span>
+                                    <p className="overview">{overview ? overview : 'Overview not available'}</p>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div >
                 <div className="d-flex flex-row bottomInfo">
-                    {cast.length>1 ? <div className="d-flex flex-column cast">
+                    {cast.length > 1 ? <div className="d-flex flex-column cast">
                         <h3>Top Billed Cast</h3>
                         <div className="filmCastContainer">
                             <FilmCastContainer cast={cast} />
@@ -156,7 +187,7 @@ const FilmDetailContainer = () => {
 
                     <div className="justWatch d-flex flex-column align-items-center">
                         <img src="https://www.themoviedb.org/assets/2/v4/logos/justwatch-c2e58adf5809b6871db650fb74b43db2b8f3637fe3709262572553fa056d8d0a.svg" alt="" />
-                        {(options.length>0) ? <Select options={options} onChange={handleChange} className='select' /> : <p className="mt-5 mb-4"><span className="fw-bold">{original_title}</span> is not available in any streaming platform.</p>}
+                        {(options.length > 0) ? <Select options={options} onChange={handleChange} className='select' /> : <p className="mt-5 mb-4"><span className="fw-bold">{original_title}</span> is not available in any streaming platform.</p>}
                         {provider ?
                             <p className="mt-2 mb-4"><span className="fw-bold">{original_title}</span> is currently available in <span className="fw-bold">{country}</span>.</p>
                             : null}

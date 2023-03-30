@@ -1,0 +1,302 @@
+@media screen and (max-width:1660px) {
+    .justWatch {
+        margin-left: 1rem;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .filmDetailContainer {
+        width: 100%;
+
+    }
+
+    .filmTitle {
+        margin-top: 0;
+    }
+
+    .filmContainer {
+        overflow: hidden;
+
+        .filmImage {
+            width: 250px;
+            height: 400px;
+            margin-left: 3rem;
+        }
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .bottomInfo {
+        overflow: hidden;
+    }
+
+    .overview {
+        width: 90%;
+    }
+
+    .filmTitleContainer,
+    .filmColumnTitle {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .sbTextContainer {
+        width: 100vw;
+
+        h2 {
+            font-size: 2.2rem;
+        }
+    }
+
+    .filmDivisionTitle {
+        font-size: 1.3rem;
+    }
+
+    .filmsContainer {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .searchBarContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+    }
+
+    .sbTextContainer {
+        margin: 0;
+        width: fit-content;
+
+        h2 {
+            font-size: calc(1.325rem + .9vw);
+        }
+
+        h3 {
+            font-size: calc(1.3rem + .6vw);
+        }
+    }
+
+    .filmData {
+        margin-left: 0;
+    }
+
+    .filmTitle {
+        display: flex;
+
+        h2,
+        span {
+            font-size: calc(1.125rem + .9vw);
+            width: fit-content;
+        }
+
+        white-space: nowrap;
+    }
+
+    .filmColumnTitleContainer {
+        display: block;
+    }
+
+    .filmColumnTitle {
+        width: 100%;
+        margin: 1rem 0rem 0rem 50%;
+
+        h2,
+        span {
+            font-size: calc(1.325rem + .9vw);
+        }
+    }
+
+    .filmContainer {
+        flex-direction: column;
+        align-items: start;
+    }
+
+}
+
+@media screen and (max-width:916px) {
+    .imageDataContainer {
+        width: 100%;
+    }
+
+    .filmContainer {
+        .filmImage {
+            margin-left: 1rem;
+            margin-right: 0.5rem;
+            min-width: 250px;
+            min-height: 0;
+            display: flex;
+        }
+    }
+
+    .filmTitle {
+
+        h2,
+        span {
+            font-size: calc(1rem + 0.9vw);
+        }
+    }
+
+    .filmInfo {
+        font-size: 14px;
+    }
+
+    .overview {
+        width: 95%;
+    }
+
+}
+
+@media screen and (max-width:776px) {
+    .filmContainer {
+        .filmImage {
+            min-width: 180px;
+            max-height: 350px;
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    .sbTextContainer,
+    .sbContainer {
+        width: 80%;
+    }
+
+    .sbContainer>form>input {
+        width: 100%;
+    }
+
+    .filmCard {
+        transform: scale(.9);
+        margin: 0;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width:696px) {
+
+    .filmTitle {
+        display: flex;
+
+        h2,
+        span {
+            font-size: calc(.8rem + 0.9vw);
+        }
+    }
+
+    .filmTitle {
+        display: flex;
+        margin-bottom: 1rem;
+
+        .filmInfoPhone {
+            display: flex;
+            color: white;
+            gap: 1rem;
+
+            span {
+                color: white;
+                font-size: 13px;
+                opacity: 1;
+            }
+        }
+    }
+
+    .filmInfo {
+        display: none;
+    }
+
+    .filmsResultContainer {
+        width: 100%;
+        place-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+        gap: 0rem;
+
+        .filmCard {
+            max-width: 13rem;
+        }
+    }
+
+    .imgInfoRowPhone {
+        display: flex;
+
+        .filmImagePhone {
+            min-width: 0px;
+            display: block;
+            height: 230px;
+            width: 100%;
+        }
+    }
+
+    .imageDataContainer {
+        margin: 0 2rem 0 2rem;
+
+        .filmImage {
+            display: none;
+        }
+    }
+
+    .overview {
+        width: 90%;
+        font-size: 13.5px;
+    }
+
+    .overviewTitle {
+        font-size: 1.2rem;
+    }
+
+    .filmOverview {
+        margin-top: 1rem;
+    }
+
+    .trailerContainer {
+        flex-direction: column;
+        margin-left: 1rem;
+    }
+
+    .tagline {
+       display: none;
+    }
+
+    .trailer {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width:490px) {
+    .searchBarContainer {
+        background-position: 50%;
+    }
+}
+
+@media screen and (max-width:416px) {
+    .filmsResultContainer {
+        .filmCard {
+            max-width: 17.5rem;
+        }
+    }
+    .imageDataContainer{
+        transform: scale(.9);
+        margin: 0;
+    }
+    .filmTitle {
+
+        h2,
+        span,.overviewTitle {
+            font-size: calc(.8rem + 0.9vw);
+        }
+    }
+    .taglineText{
+        font-size:14px;
+    }
+}

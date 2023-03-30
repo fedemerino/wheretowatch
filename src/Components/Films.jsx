@@ -3,8 +3,7 @@ import Film from './Film'
 const Films = ({ films }) => {
     return (
         films.map((film) => {
-            if (film.backdrop_path) return <Film key={film.id} {...film}/>
-
+            return <Film key={film.id} {...film}/>
         }) 
     )
 }

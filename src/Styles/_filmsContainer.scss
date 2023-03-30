@@ -63,5 +63,25 @@
         width: 85%;
         display: grid;
         gap: 2rem;
-        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
     }
+
+.seeMoreButton{
+  padding: 24px 32px;
+  border: 0;
+  border-radius: 8px;
+  background-color:rgb(9, 27, 44);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(30px);
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.notFound{
+    width: 300px;
+    height: 450px;
+}

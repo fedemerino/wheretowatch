@@ -7,7 +7,9 @@ const Film = ({ backdrop_path, title, release_date, vote_average, id }) => {
   return (
     <Link to={link}>
       <div className='filmCard'>
-        <img src={url} alt={title} className='filmImg' />
+        {backdrop_path
+        ?<img src={url} alt={title} className='filmImg' />
+        : <img className='filmImg' src='/notfound.png'/>}
         <span className='filmDate'>{date}</span>
         <p classname='cardTitle mt-5'>{title}</p>
       </div>
