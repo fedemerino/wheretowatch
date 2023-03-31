@@ -62,6 +62,26 @@
 }
 
 @media screen and (max-width: 1120px) {
+    .justWatch {
+        margin: 3rem 1rem 0 1rem;
+
+        p {
+            margin: 0rem 1.5rem 0rem 1.5rem;
+        }
+    }
+
+    .cast {
+        margin: 1rem 1rem 0rem 1rem;
+    }
+
+    .bottomInfo {
+        flex-direction: column !important;
+    }
+
+    .filmCastContainer {
+        width: 100%;
+    }
+
     .searchBarContainer {
         display: flex;
         flex-direction: column;
@@ -121,6 +141,10 @@
 }
 
 @media screen and (max-width:916px) {
+    .providers {
+        grid-auto-rows: 130px;
+    }
+
     .imageDataContainer {
         width: 100%;
     }
@@ -163,6 +187,17 @@
 }
 
 @media screen and (max-width:768px) {
+    input {
+        font-size: 14px;
+    }
+
+    .searchBarContainer {
+        margin-bottom: 0.8rem;
+    }
+
+    .filmDivisionTitle {
+        margin-bottom: 0 !important;
+    }
 
     .sbTextContainer,
     .sbContainer {
@@ -171,6 +206,10 @@
 
     .sbContainer>form>input {
         width: 100%;
+    }
+
+    .mb-5 {
+        margin-bottom: .5rem !important;
     }
 
     .filmCard {
@@ -186,11 +225,16 @@
 
 @media screen and (max-width:696px) {
 
+    .filmContainer {
+        overflow: auto;
+    }
+
     .filmTitle {
         display: flex;
 
         h2,
         span {
+
             font-size: calc(1.2rem + 0.9vw);
         }
     }
@@ -273,7 +317,17 @@
     }
 }
 
+@media screen and (max-width:600px) {
+    .providers {
+        grid-auto-rows: 130px;
+    }
+}
+
 @media screen and (max-width:558px) {
+    .circleContainer {
+        transform: scale(.9);
+    }
+
     .filmTitle {
         display: flex;
 
@@ -332,6 +386,7 @@
 
 @media screen and (max-width:370px) {
     .filmTitle {
+
         h2,
         span {
             font-size: calc(14px + 0.390225vw)

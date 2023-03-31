@@ -16,7 +16,7 @@ const SearchbarContainer = () => {
       </div>
       <div className='sbContainer'>
         <form onSubmit={handleSubmit}>
-          <input type="search" placeholder='Search for a movie, serie, tv show...' className='searchbar' onChange={(e) => setQuery(e.target.value)} />
+          <input type="search" placeholder='Search for a movie...' className='searchbar' onChange={(e) => setQuery(e.target.value)} />
         </form>
       </div>
     </div>

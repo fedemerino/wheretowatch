@@ -193,7 +193,7 @@ const FilmDetailContainer = () => {
                             : null}
                         <div className="providers">
                             {provider ? provider.map((provider) =>
-                                <div className="d-flex flex-column justify-content-center align-items-center">
+                                <div className="d-flex flex-column justify-content-center align-items-center pb-3">
                                     <img src={`https://www.themoviedb.org/t/p/original${provider.logo_path}`}></img>
                                     <p className="providerName">{provider.provider_name}</p>
                                 </div>
