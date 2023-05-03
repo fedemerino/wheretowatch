@@ -16,7 +16,7 @@ const SearchResultContainer = () => {
   }, [query, page])
 
   async function fetchSearchQuery() {
-    const resp = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}&include_adult=true`)
+    const resp = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}&include_adult=false`)
     const data = await resp.json()
     setSearchResults(searchResults => [...searchResults, ...data.results])
     setMaxPage(data.total_pages)
