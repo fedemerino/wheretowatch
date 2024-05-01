@@ -9,7 +9,7 @@ const SearchbarContainer = () => {
   const handleSubmit = () => {
     navigate(`/search/${query}`)
   }
-  useImagePreloader("/bbbg.png")
+  useImagePreloader(["/bbbg.png"])
   const backgroundImage = {
     backgroundImage: `linear-gradient(to right, rgba(3,37,65, 0.8) 0%, rgba(3,37,65, 0) 100%), url('/bbbg.png')`,
   }
