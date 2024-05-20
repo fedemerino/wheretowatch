@@ -16,7 +16,7 @@ const SearchbarContainer = () => {
   return (
     <div className="searchBarContainer" style={backgroundImage}>
       <div className="sbTextContainer">
-        <h2>Welcomee.</h2>
+        <h2>Welcome.</h2>
         <h3 className="sbText">
           Find out where to watch your favorite movies!
         </h3>
